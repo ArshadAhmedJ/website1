@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Arabia - Luxury Car Detailing and Servicing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lovelo:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <div class="loader-content">
+            <img src="{{ url_for('static', filename='images/logo_img.png') }}" alt="Cars Arabia Logo" class="logo">
+            <span class="company-name">Cars Arabia</span>
+            <div class="car-animation">
+                <div class="car">🚗</div>
+                <div class="smoke">💨</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="title">
+                <h1> Cars Arabia</h1>
+            </div>
+            <div class="logo-nav">
+                <img src="{{ url_for('static', filename='images/logo_img.png') }}" alt="logo" class="logo-nav">
+            </div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="dropbtn" style="text-decoration: none;">Services</button>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('mechanical') }}">Mechanical and Electrical</a>
+                        <a href="{{ url_for('rep') }}">Body and Exterior Work</a>
+                        <a href="#">Audio and Interior</a>
+                        <a href="#">Detailing and Modifications</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">About</button>
+                    <div class="dropdown-content">
+                        <a href="#">Our Team</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                
+                <a href="#" class="book-now">Book Now</a>
+            </div>
+            <a href="#" class="book-now mobile-book">Book Now</a>
+        </nav>
+        <div class="banner">
+            <img src="{{ url_for('static', filename='images/nav.png') }}" alt="Banner Image">
+        </div>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Transform Your Ride with Cars Arabia</h1>
+                    <p>Unleash your car's true potential with our expert modification services. From performance upgrades to stunning aesthetics, we turn your vision into reality.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="button primary">Get Started</a>
+                        <a href="#" class="button secondary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services">
+                <h2>Our Services</h2>
+                <div class="service-cards">
+                    <div class="card">
+                        <i class="fas fa-wrench"></i>
+                        <h3>Mechanical</h3>
+                        <p>Focuses on the design, maintenance, and repair of machinery and mechanical systems.</p>
+                        <a href="#" class="button secondary know-more">Know More</a>
+                    </div>
+                    <div class="card">
+                        <i class="fa fa-desktop"></i>
+                        <h3>Electrical</h3>
+                        <p> Deals with the installation, troubleshooting, and maintenance of electrical systems and circuits.</p>
+                        <a href="#" class="button secondary know-more">Know More</a>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Diagnosing</h3>
+                        <p> Involves identifying and analyzing faults in mechanical and electrical systems using specialized diagnostic tools.</p>
+                        <a href="#" class="button secondary know-more">Know More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-cards">
+                    <div class="card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Cars Arabia transformed my average car into a head-turning machine. Their attention to detail and expertise is unmatched!"</p>
+                        <p class="client-name">- Arshad Ahmed</p>
+                    </div>
+                    <div class="card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The performance upgrades I got from Cars Arabia completely changed how my car drives. It's like having a new vehicle!"</p>
+                        <p class="client-name">- Sarah Lee</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <h2>Ready to Upgrade Your Ride?</h2>
+                <p>Contact us today for a free consultation and quote. Let's make your car dreams a reality.</p>
+                <a href="#" class="button primary">Get a Free Quote</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="grid grid-cols-2 mb-8">
+                    <div class="gradient-bg">
+                        <h3 class="text-xl font-bold mb-8">Application to Accept Car</h3>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <ul class="flash-messages">
+                            {% for category, message in messages %}
+                                <li class="{{ category }}">{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+
+                    <form class="space-y-4" action="{{ url_for('submit_application') }}" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="number" name="phone" placeholder="Phone Number" required>
+                        <input type="text" name="car_model" placeholder="Make and Model of Car" required>
+                        <textarea name="additional_info" placeholder="Additional Information" rows="4" required></textarea>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Application
+                        </button>
+                    </form>
+
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <img src="{{ url_for('static', filename='images/logo_img.png') }}" alt="Car Dealer Logo" class="logo">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-map-marker-alt icon"></i>
+                            <span>123 Luxury Car Avenue, Autoville, AV 12345</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 mb-8">
+                    <div class="contact-info space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone icon"></i>
+                            <span>Call our office: (123) 456-7890</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marked-alt icon"></i>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none;">View on Google Maps</a>
+                        </div>
+                        <div class="flex">
+                            <a href="#" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp social-icon"></i>
+                            </a>
+                            <a href="#" aria-label="Telegram">
+                                <i class="fab fa-telegram-plane social-icon"></i>
+                            </a>
+                        </div>
+                        <button class="requesttocall-button">Request a Call</button>
+                        <div class="popup" id="callRequestPopup">
+                            <div class="popup-content">
+                                <h2>Request a Call</h2>
+                                <form id="callRequestForm">
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                    <div class="phone-input-container">
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                    <button type="submit">Submit</button>
+                                </form>
+                                <button class="close-popup">&times;</button>
+                            </div>
+                        </div>
+
+                <div class="flex flex-wrap justify-between items-center border-t">
+                    <div class="quick-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div>
+                        <a href="#" class="google-reviews">Google Reviews</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script/index.js') }}"></script>
+</body>
+</html>

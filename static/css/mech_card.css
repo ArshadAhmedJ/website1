@@ -1,0 +1,546 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --background-color: #000000;
+    --border-color: #e0e0e0;
+    --hover-color: #4d4d4d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    background-image: url('../images/nav_back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#main-content {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+body.show-content #main-content {
+    opacity: 1;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 3px solid white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    height: 80px;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 40px);
+    z-index: 1000;
+    background-color: black;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a, .dropdown .dropbtn {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px 0;
+    transition: color 0.4s ease;
+}
+
+.nav-links a:hover, .dropdown:hover .dropbtn {
+    color: rgb(11, 182, 229);
+}
+
+.book-now {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: none;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.book-now:hover {
+    color: rgb(11, 182, 229);
+}
+
+.mobile-book {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.dropbtn:hover {
+    color: rgb(11, 182, 229);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    min-width: 160px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 0;
+}
+
+/* Banner Styles */
+.banner {
+    margin: 120px auto 20px;
+    width: calc(100% - 40px);
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    animation: zoomIn 2s ease forwards;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    transform: scale(0); 
+    animation: image 5s ease forwards;
+}
+
+@keyframes image {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Service Detail Page Styles */
+.service-detail {
+    display: flex;
+    padding: 60px 20px;
+    background-color: rgba(249, 249, 249, 0.1);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.service-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.service-description {
+    flex: 1;
+    padding: 0 30px;
+}
+
+.service-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.service-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.info-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.info-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.info-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(249, 249, 249, 0.9);
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: 300px;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    color: #333;
+}
+
+.info-hover:hover .info-content {
+    display: block;
+}
+
+.pricing-section {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.pricing-section h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.pricing-table {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.pricing-row {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.pricing-row:last-child {
+    border-bottom: none;
+}
+
+.pricing-row.header {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.cell {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+}
+
+.application-form {
+    background-color: rgba(249, 249, 249, 0.1);
+    padding: 60px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.application-form h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.application-form form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.application-form input,
+.application-form select,
+.application-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.application-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.application-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--background-color);
+    padding: 4rem 1rem;
+    color: white;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    nav {
+        margin: 20px 20px 0px 20px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .menu-icon {
+        display: block;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .mobile-book {
+        font-size: 12px;
+        display: block;
+        order: 3;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        order: 4;
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 2px;
+    }
+
+    .nav-links .book-now {
+        display: none;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        margin-top: 10px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .service-detail {
+        flex-direction: column;
+    }
+
+    .service-image {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .service-description {
+        padding: 0;
+    }
+
+    .pricing-row {
+        flex-direction: column;
+    }
+
+    .cell {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cell:last-child {
+        border-bottom: none;
+    }
+}
+.pricing-section {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pricing-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pricing-button:hover {
+    background-color: #2980b9;
+}
+
+.pricing-table {
+    display: none;
+    background-color: transparent;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pricing-table th, .pricing-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.pricing-table th {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.pricing-table tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.pricing-table tr:hover {
+    background-color: transparent;
+}

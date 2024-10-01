@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Arabia - Luxury Car Detailing and Servicing</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lovelo:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    
+    <div id="loader">
+        <div class="loader-content">
+            <img src="logo.jpeg" alt="Cars Arabia Logo" class="logo">
+            <span class="company-name">Cars Arabia</span>
+            <div class="car-animation">
+                <div class="car">🚗</div>
+                <div class="smoke">💨</div>
+            </div>
+        </div>
+    </div>
+    <!-- Main content starts here, initially hidden -->
+    <div id="main-content">
+        <nav>
+            <div class="logo">
+                <img src="logo.jpeg" alt="Logo">
+            </div>
+
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="dropbtn">Services</button>
+                    <div class="dropdown-content">
+                        <a href="#">Mechanical and Electrical</a>
+                        <a href="#">Body and Exterior Work</a>
+                        <a href="#">Audio and Interior</a>
+                        <a href="#">Detailing and Modifications</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">About</button>
+                    <div class="dropdown-content">
+                        <a href="#">Our Team</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+
+                <a href="#" class="book-now">Book Now</a>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <img src="nav.png">
+        </div>
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Transform Your Ride with Cars Arabia</h1>
+                    <p>Unleash your car's true potential with our expert modification services. From performance upgrades to stunning aesthetics, we turn your vision into reality.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="button primary">Get Started</a>
+                        <a href="#" class="button secondary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services">
+                <h2>Our Services</h2>
+                <div class="service-cards">
+                    <div class="card">
+                        <i class="fas fa-wrench"></i>
+                        <h3>Performance Upgrades</h3>
+                        <p>Boost your car's power and efficiency with our cutting-edge performance modifications.</p>
+                        <a href="#" class="button secondary know-more">Know More</a>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-paint-roller"></i>
+                        <h3>Custom Paint Jobs</h3>
+                        <p>Stand out from the crowd with our professional and unique custom paint services.</p>
+                        <a href="#" class="button secondary know-more">Know More</a>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Electronic Tuning</h3>
+                        <p>Optimize your vehicle's performance with our advanced electronic tuning solutions.</p>
+                        <a href="#" class="button secondary know-more">Know More</a>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonials">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-cards">
+                    <div class="card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Cars Arabia transformed my average car into a head-turning machine. Their attention to detail and expertise is unmatched!"</p>
+                        <p class="client-name">- Arshad Ahmed</p>
+                    </div>
+                    <div class="card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The performance upgrades I got from TurboMod Motors completely changed how my car drives. It's like having a new vehicle!"</p>
+                        <p class="client-name">- Sarah Lee</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <h2>Ready to Upgrade Your Ride?</h2>
+                <p>Contact us today for a free consultation and quote. Let's make your car dreams a reality.</p>
+                <a href="#" class="button primary">Get a Free Quote</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 TurboMod Motors. All rights reserved.</p>
+            <div>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy</a>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+    const loader = document.getElementById('loader');
+    const mainContent = document.getElementById('main-content');
+
+    setTimeout(() => {
+        loader.classList.add('slide-up');
+    }, 2500); 
+
+    setTimeout(() => {
+        loader.style.display = 'none';
+        document.body.classList.add('show-content');
+    }, 3000); 
+});
+    </script>
+</body>
+</html>
+
+</html>

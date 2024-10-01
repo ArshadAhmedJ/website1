@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Arabia - Luxury Car Detailing and Servicing</title>
+    <style> 
+        :root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --hover-color: #4d4d4d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    border: 3px solid white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.dropdown {
+    position: static;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+    color: var(--primary-color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover {
+    transform: scale(1.05);
+}
+
+.dropdown-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover img {
+    transform: scale(1.1);
+}
+
+.book-now {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now:hover {
+    background-color: var(--hover-color);
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo_img.png" alt="Cars Arabia Logo" class="logo-img">
+            <h1>Cars Arabia</h1>
+        </div>
+        <div class="nav-links">
+            <div class="dropdown">
+                <button class="dropbtn">Services</button>
+                <div class="dropdown-content">
+                    <div class="dropdown-grid">
+                        <a href="#" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/electrical.jpg') }}" alt="Mechanical and Electrical">
+                            <span>Mechanical and Electrical</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/electrical.jpg') }}" alt="Body and Exterior Work">
+                            <span>Body and Exterior Work</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/electrical.jpg') }}" alt="Audio and Interior">
+                            <span>Audio and Interior</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="{{ url_for('static', filename='images/electrical.jpg') }}" alt="Detailing and Modifications">
+                            <span>Detailing and Modifications</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">About</button>
+                <div class="dropdown-content">
+                    <div class="dropdown-grid">
+                        <a href="#" class="dropdown-item">
+                            <img src="team.jpg" alt="Our Team">
+                            <span>Our Team</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="careers.jpg" alt="Careers">
+                            <span>Careers</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="contact.jpg" alt="Contact Us">
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="book-now">Book Now</a>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Arabia - Detailing Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mech_card.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lovelo:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-content">
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="logo">
+                Cars Arabia
+            </div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="dropbtn">Services</button>
+                    <div class="dropdown-content">
+                        <a href="#">Mechanical and Electrical</a>
+                        <a href="#">Body and Exterior Work</a>
+                        <a href="#">Audio and Interior</a>
+                        <a href="#">Detailing and Modifications</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">About</button>
+                    <div class="dropdown-content">
+                        <a href="#">Our Team</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <a href="#" class="book-now">Book Now</a>
+            </div>
+            <a href="#" class="book-now mobile-book">Book Now</a>
+        </nav>
+        
+        <div class="banner">
+            <img src="/placeholder.svg?height=400&width=1200" alt="Detailing Service Banner">
+        </div>
+
+        <div class="service-detail">
+            <div class="service-image">
+                <img src="/placeholder.svg?height=400&width=600" alt="Detailing Service">
+            </div>
+            <div class="service-description">
+                <h2>Detailing Service</h2>
+                <p>Our premium detailing service brings out the true beauty of your vehicle. Our expert technicians use state-of-the-art equipment and premium products to clean, polish, and protect every inch of your car, inside and out. From paint correction to interior deep cleaning, we ensure your vehicle looks its absolute best.</p>
+                <div class="info-hover">
+                    <span class="info-icon">i</span>
+                    <div class="info-content">
+                        Our detailing wash includes:
+                        <ul>
+                            <li>Exterior hand wash and dry</li>
+                            <li>Paint decontamination</li>
+                            <li>Clay bar treatment</li>
+                            <li>Machine polishing</li>
+                            <li>Wax or ceramic coating application</li>
+                            <li>Interior vacuuming and cleaning</li>
+                            <li>Leather conditioning</li>
+                            <li>Glass cleaning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <h3>Detailing Wash Pricing</h3>
+            <button class="pricing-button" onclick="togglePricingTable()">Show Pricing</button>
+            <table class="pricing-table" id="pricingTable">
+                <tr>
+                    <th>Vehicle Type</th>
+                    <th>Price</th>
+                    <th>Club Price</th>
+                </tr>
+                <tr>
+                    <td>Compact cars</td>
+                    <td>165 AED</td>
+                    <td>150 AED</td>
+                </tr>
+                <tr>
+                    <td>Fullsize cars</td>
+                    <td>187 AED</td>
+                    <td>170 AED</td>
+                </tr>
+                <tr>
+                    <td>SUV's</td>
+                    <td>209 AED</td>
+                    <td>190 AED</td>
+                </tr>
+                <tr>
+                    <td>Luxury cars</td>
+                    <td>231 AED</td>
+                    <td>210 AED</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="application-form">
+            <h3>Book Your Detailing Service</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <select required>
+                    <option value="">Select Vehicle Type</option>
+                    <option value="compact">Compact Car</option>
+                    <option value="fullsize">Fullsize Car</option>
+                    <option value="suv">SUV</option>
+                    <option value="luxury">Luxury Car</option>
+                </select>
+                <input type="text" placeholder="Vehicle Make and Model" required>
+                <textarea placeholder="Additional Information" rows="4"></textarea>
+                <button type="submit">Submit Booking</button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Car Avenue, Autoville, AV 12345</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@carsarabia.com</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Cars Arabia. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function togglePricingTable() {
+            var table = document.getElementById("pricingTable");
+            var button = document.querySelector(".pricing-button");
+            if (table.style.display === "none" || table.style.display === "") {
+                table.style.display = "table";
+                button.textContent = "Hide Pricing";
+            } else {
+                table.style.display = "none";
+                button.textContent = "Show Pricing";
+            }
+        }
+    </script>
+</body>
+</html>
