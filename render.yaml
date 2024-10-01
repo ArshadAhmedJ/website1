@@ -1,1 +1,13 @@
+services:
+  - type: web
+    name: flask-app
+    env: python
+    region: india  # or use other regions like 'frankfurt'
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"  # Replace 'app' with your main Flask file name
+    autoDeploy: true
+    plan: free  # Free tier, or change to 'starter' or 'standard' for paid plans
+    envVars:
+      - key: FLASK_ENV
+        value: production  # Add any necessary environment variables here
 
